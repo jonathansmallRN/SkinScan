@@ -41,6 +41,22 @@ No silent assumptions are permitted.
 | capture_date | string | Optional | ISO 8601 date of image capture (YYYY-MM-DD) |
 | site_id      | string | Optional | Clinical site identifier |
 
+## 3.1 Optional Quality Control Fields
+
+These fields are optional but supported by the validation checklist.
+
+| Field Name       | Type    | Required | Description |
+|------------------|---------|----------|-------------|
+| exclude          | boolean | Optional | Indicates image was rejected per ANNOTATION_SOP.md |
+| exclude_reason   | string  | Optional | Free-text reason for rejection |
+| irr_performed    | boolean | Optional | Indicates image was part of IRR subset |
+| annotator_id     | string  | Optional | Identifier for annotator |
+| sop_version      | string  | Optional | Version of SOP used during labeling |
+
+If present, validation scripts must:
+- Remove rows where `exclude=true`
+- Log exclusion counts and reasons
+- Surface IRR participation if available
 ---
 
 ## 4. Data Splitting Rules

@@ -3,6 +3,8 @@ scripts/01_prepare_manifest.py
 SkinScan — Clinical Segmentation Framework
 Version: 1.0
 
+# Governance: Enforces patient-level splitting and validation firewall per DATA_DICTIONARY.
+
 PURPOSE
 -------
 Build data/manifest.jsonl — the contract between raw data and the training
